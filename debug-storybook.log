@@ -1,0 +1,19 @@
+[24:58:30.124] [DEBUG] Extracting storybook data...
+[24:58:30.124] [DEBUG] Getting Storybook info...
+[24:58:30.125] [DEBUG] Loading main config...
+[24:58:30.193] [ERROR] Error: Unable to find or evaluate apps/portfolio/.storybook/main.ts: SB_CORE-SERVER_0007 (MainFileEvaluationError): Storybook couldn't evaluate your apps/portfolio/.storybook/main.ts file.
+
+Original error:
+Error: Cannot find module '@storybook/addon-docs/package.json'
+Require stack:
+- /apps/portfolio/.storybook/main.ts
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1212:15)
+    at Function.resolve (node:internal/modules/helpers:193:19)
+    at getAbsolutePath (/apps/portfolio/.storybook/main.ts:23:26)
+    at Object.<anonymous> (/apps/portfolio/.storybook/main.ts:9:12)
+    at Module._compile (node:internal/modules/cjs/loader:1529:14)
+    at Module._compile (/Users/tommy/.npm/_npx/4b73720469a487e5/node_modules/esbuild-register/dist/node.js:2258:26)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1613:10)
+    at Object.newLoader [as .ts] (/Users/tommy/.npm/_npx/4b73720469a487e5/node_modules/esbuild-register/dist/node.js:2262:9)
+    at Module.load (node:internal/modules/cjs/loader:1275:32)
+    at Module._load (node:internal/modules/cjs/loader:1096:12)
