@@ -2,7 +2,7 @@
   "name": "@portfolio-monorepo/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {"build:portfolio": "nx build portfolio --prod"},
   "private": true,
   "dependencies": {
     "@angular/common": "~20.0.0",
