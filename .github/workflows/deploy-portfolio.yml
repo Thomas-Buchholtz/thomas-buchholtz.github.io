@@ -20,7 +20,7 @@ jobs:
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
       - name: Build Angular app
-        run: npm run build:portfolio
+        run: npm run build:portfolio --configuration=production
 
   deploy:
     needs: build-and-deploy
