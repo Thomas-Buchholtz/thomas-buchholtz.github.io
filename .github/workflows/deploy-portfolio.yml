@@ -38,3 +38,4 @@ jobs:
           branch: gh-pages
           folder: dist/apps/portfolio
           clean: true
+          token: ${{ secrets.GH_PAGES_TOKEN }}
