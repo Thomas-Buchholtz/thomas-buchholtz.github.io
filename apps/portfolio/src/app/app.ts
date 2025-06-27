@@ -1,13 +1,16 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { NxWelcome } from './nx-welcome';
+import { RouterOutlet } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import {Cv} from "./features/cv";
 
 @Component({
-  imports: [NxWelcome, RouterModule],
   selector: 'app-root',
+  standalone: true,
+  imports: [
+    CommonModule,
+    RouterOutlet,
+    Cv
+  ],
   templateUrl: './app.html',
-  styleUrl: './app.scss',
 })
-export class App {
-  protected title = 'portfolio';
-}
+export class AppComponent {}
