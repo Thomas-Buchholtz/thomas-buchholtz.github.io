@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@portfolio-monorepo/ui": ["ui/src/index.ts"]
+      "@portfolio-monorepo/ui": ["ui/src/index.ts"],
+      "@lib/ui-components": ["shared/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
