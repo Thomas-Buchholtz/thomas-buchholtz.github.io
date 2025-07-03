@@ -16,7 +16,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 20
+          node-version: '20'
 
       - name: Install dependencies
         run: npm ci --legacy-peer-deps
@@ -28,20 +28,10 @@ jobs:
         if: github.event_name == 'pull_request'
         uses: actions/upload-artifact@v4
         with:
-          name: portfolio-dist
-          path: dist/apps/portfolio
+          name: portfolio-docs
+          path: docs
 
-      - name: Copy index.html to 404.html
-        if: github.event_name == 'push'
-        run: cp dist/apps/portfolio/index.html dist/apps/portfolio/404.html
-
-      - name: Deploy to GitHub Pages
-        if: github.event_name == 'push'
-        uses: JamesIves/github-pages-deploy-action@v4
-        with:
-          branch: gh-pages
-          folder: dist/apps/portfolio
-      - name: Prepare 404-Fallback & disable Jekyll
+      - name: Prepare 404-fallback & disable Jekyll
         if: github.event_name == 'push'
         run: |
           cp docs/index.html docs/404.html
