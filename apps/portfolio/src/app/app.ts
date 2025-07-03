@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {Cv} from "./features/cv";
+import {Navbar} from "@lib/ui-components";
 
 @Component({
   selector: 'app-root',
@@ -9,7 +9,7 @@ import {Cv} from "./features/cv";
   imports: [
     CommonModule,
     RouterOutlet,
-    Cv
+    Navbar,
   ],
   templateUrl: './app.html',
 })

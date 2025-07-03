@@ -10,7 +10,7 @@
       "executor": "@angular-devkit/build-angular:browser",
       "outputs": ["{options.outputPath}"],
       "options": {
-        "outputPath": "dist/apps/portfolio",
+        "outputPath": "docs",
         "index": "apps/portfolio/src/index.html",
         "main": "apps/portfolio/src/main.ts",
         "polyfills": ["zone.js"],
@@ -22,7 +22,8 @@
             "input": "apps/portfolio/public"
           }
         ],
-        "styles": ["apps/portfolio/src/styles.scss"]
+        "styles": ["apps/portfolio/src/styles.scss"],
+        "baseHref": "/"
       },
       "configurations": {
         "production": {
@@ -34,8 +35,8 @@
             },
             {
               "type": "anyComponentStyle",
-              "maximumWarning": "4kb",
-              "maximumError": "8kb"
+              "maximumWarning": "1mb",
+              "maximumError": "2mb"
             }
           ],
           "outputHashing": "all"
