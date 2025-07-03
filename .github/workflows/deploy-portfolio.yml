@@ -41,5 +41,17 @@ jobs:
         with:
           branch: gh-pages
           folder: dist/apps/portfolio
+      - name: Prepare 404-Fallback & disable Jekyll
+        if: github.event_name == 'push'
+        run: |
+          cp docs/index.html docs/404.html
+          touch docs/.nojekyll
+
+      - name: Deploy to GitHub Pages
+        if: github.event_name == 'push'
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: gh-pages
+          folder: docs
           clean: true
           token: ${{ secrets.GH_PAGES_TOKEN }}
