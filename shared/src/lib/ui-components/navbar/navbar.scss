@@ -1,0 +1,21 @@
+@import "bootstrap-icons";
+
+.glass-navbar {
+  background-color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid;
+  border-bottom-color: #bcb2ad;
+}
+
+.navbar-toggler, .btn-close:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.offcanvas,
+.offcanvas-body {
+  opacity: 1;
+  visibility: visible;
+  display: block;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+}
