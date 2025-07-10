@@ -1,10 +1,10 @@
 import { Route } from '@angular/router';
 import {Cv} from './pages/cv/cv';
-import {NotFound} from "./pages/notfound/404";
+import {Home} from "./pages/home/home";
 
 export const appRoutes: Route[] = [
 
-  {path: '', component: NotFound},
+  {path: '', component: Home},
 
   {path: 'cv', component: Cv},
 
