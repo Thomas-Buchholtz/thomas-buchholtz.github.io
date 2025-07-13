@@ -1,0 +1,26 @@
+<form (ngSubmit)="onSubmit()" #contactForm="ngForm">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name</label>
+    <input id="name" [(ngModel)]="name" name="name" required class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="email" class="form-label">E-Mail</label>
+    <input id="email" [(ngModel)]="email" name="email" required type="email" class="form-control" />
+  </div>
+
+  <div class="mb-3">
+    <label for="message" class="form-label">Nachricht</label>
+    <textarea id="message" [(ngModel)]="message" name="message" required class="form-control" rows="5"></textarea>
+  </div>
+
+  <button class="btn btn-primary" type="submit">Nachricht senden</button>
+
+  <div *ngIf="success" class="alert alert-success mt-3">
+    Nachricht wurde erfolgreich gesendet!
+  </div>
+
+  <div *ngIf="error" class="alert alert-danger mt-3">
+    Es ist ein Fehler aufgetreten. Bitte versuche es später erneut.
+  </div>
+</form>

@@ -10,7 +10,7 @@ import {Footer, Navbar} from "@lib/ui-components";
     CommonModule,
     RouterOutlet,
     Navbar,
-    Footer
+    Footer,
   ],
   templateUrl: './app.html',
 })
