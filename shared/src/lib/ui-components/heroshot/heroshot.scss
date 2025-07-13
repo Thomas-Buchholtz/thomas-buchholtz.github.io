@@ -1,7 +1,9 @@
 .hero-container {
+  position: relative;
   width: 100%;
   overflow: hidden;
   cursor: crosshair;
+  height: 100vh;
 
   .image {
     position: absolute;
