@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import {Navbar} from "@lib/ui-components";
+import {Footer, Navbar} from "@lib/ui-components";
 
 @Component({
   selector: 'app-root',
@@ -10,6 +10,7 @@ import {Navbar} from "@lib/ui-components";
     CommonModule,
     RouterOutlet,
     Navbar,
+    Footer
   ],
   templateUrl: './app.html',
 })

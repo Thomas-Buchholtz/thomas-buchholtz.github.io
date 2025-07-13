@@ -17,6 +17,13 @@
   }
 }
 
+.nav-link{
+  &:hover {
+    transition: 0.5s;
+    color: #b4eaff!important;
+  }
+}
+
 .navbar-toggler, .btn-close:focus {
   outline: none;
   box-shadow: none;
