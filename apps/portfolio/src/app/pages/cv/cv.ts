@@ -23,11 +23,17 @@ export class Cv {
     }
   }
 
-  prevPage() {
-    if (this.currentPage > 1) this.currentPage--;
+  prevPage(): void {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 
-  nextPage() {
-    if (this.currentPage < 2) this.currentPage++;
+  nextPage(): void {
+    if (this.currentPage < 2) {
+      this.currentPage++;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
   }
 }
