@@ -5,6 +5,7 @@ import { CommonModule } from '@angular/common';
   selector: 'app-cv',
   imports: [CommonModule],
   templateUrl: './cv.html',
+  styleUrl: './cv.scss'
 })
 export class Cv {
   currentPage = 1;

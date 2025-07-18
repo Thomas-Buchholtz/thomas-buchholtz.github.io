@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {Heroshot} from "@lib/ui-components";
 
@@ -8,4 +8,22 @@ import {Heroshot} from "@lib/ui-components";
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
-export class Home {}
+export class Home implements AfterViewInit {
+@ViewChild('heading', { static: true }) heading!: ElementRef;
+
+  ngAfterViewInit() {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          this.heading.nativeElement.classList.add('visible');
+          observer.unobserve(this.heading.nativeElement);
+        }
+      },
+      {
+        threshold: 1
+      }
+    );
+
+    observer.observe(this.heading.nativeElement);
+  }
+}
