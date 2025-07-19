@@ -1,38 +1,52 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {SupabaseContactService} from "../../service/supabase-contact.service";
-import {FormsModule} from "@angular/forms";
+import {Component} from '@angular/core';
+import {SupabaseContactService} from '../../service/supabase-contact.service';
+import {FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+import {CommonModule} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {Modal} from 'bootstrap';
 
 @Component({
   selector: 'lib-contact',
-  imports: [CommonModule, FormsModule],
+  standalone: true,
+  imports: [CommonModule, FormsModule, ReactiveFormsModule],
   templateUrl: './contact.html',
-  styleUrl: './contact.scss',
+  styleUrls: ['./contact.scss'],
 })
 export class ContactComponent {
-  name = '';
-  email = '';
-  message = '';
-  success = false;
-  error = false;
+  contactForm: FormGroup;
 
-  constructor(private contactService: SupabaseContactService) {}
+  constructor(
+    private fb: FormBuilder,
+    private contactService: SupabaseContactService
+  ) {
+    this.contactForm = this.fb.group({
+      name: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      message: ['', Validators.required],
+    });
+  }
 
   onSubmit() {
-    this.contactService
-      .sendContactMessage(this.name, this.email, this.message)
-      .subscribe({
-        next: () => {
-          this.success = true;
-          this.error = false;
-          this.name = '';
-          this.email = '';
-          this.message = '';
-        },
-        error: () => {
-          this.success = false;
-          this.error = true;
-        },
-      });
+    if (this.contactForm.invalid) return;
+
+    const {name, email, message} = this.contactForm.value;
+
+    this.contactService.sendContactMessage(name, email, message).subscribe({
+      next: () => {
+        this.contactForm.reset();
+        this.showModal();
+      },
+      error: () => {
+        alert('Es ist ein Fehler aufgetreten. Bitte versuche es erneut.');
+      },
+    });
+  }
+
+  showModal() {
+    const modalElement = document.getElementById('successModal');
+    if (modalElement) {
+      const modal = new Modal(modalElement);
+      modal.show();
+    }
   }
 }
