@@ -1,10 +1,16 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
-import { CommonModule } from '@angular/common';
-import {Heroshot} from "@lib/ui-components";
+import {CommonModule} from '@angular/common';
+import {ContactComponent, Heroshot} from "@lib/ui-components";
+import {HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-home',
-  imports: [CommonModule, Heroshot],
+  imports: [
+    CommonModule,
+    Heroshot,
+    ContactComponent,
+    HttpClientModule
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })

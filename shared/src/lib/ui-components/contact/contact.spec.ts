@@ -1,16 +1,17 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { UiComponents } from './ui-components';
+import {ContactComponent} from './contact';
+import {HttpClientModule} from "@angular/common/http";
 
-describe('UiComponents', () => {
-  let component: UiComponents;
-  let fixture: ComponentFixture<UiComponents>;
+describe('Contact', () => {
+  let component: ContactComponent;
+  let fixture: ComponentFixture<ContactComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [UiComponents],
+      imports: [ContactComponent, HttpClientModule],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(UiComponents);
+    fixture = TestBed.createComponent(ContactComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
