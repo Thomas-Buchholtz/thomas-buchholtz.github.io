@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, inject} from '@angular/core';
 import {SupabaseContactService} from '../../service/supabase-contact.service';
 import {FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
@@ -13,23 +13,21 @@ import {Modal} from 'bootstrap';
   styleUrls: ['./contact.scss'],
 })
 export class ContactComponent {
-  contactForm: FormGroup;
+  private fb = inject(FormBuilder);
+  private contactService = inject(SupabaseContactService);
 
-  constructor(
-    private fb: FormBuilder,
-    private contactService: SupabaseContactService
-  ) {
-    this.contactForm = this.fb.group({
-      name: ['', Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required],
-    });
-  }
+  contactForm = this.fb.group({
+    name: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    message: ['', Validators.required],
+  });
 
   onSubmit() {
     if (this.contactForm.invalid) return;
 
-    const {name, email, message} = this.contactForm.value;
+    const name = this.contactForm.get('name')?.value as string;
+    const email = this.contactForm.get('email')?.value as string;
+    const message = this.contactForm.get('message')?.value as string;
 
     this.contactService.sendContactMessage(name, email, message).subscribe({
       next: () => {
