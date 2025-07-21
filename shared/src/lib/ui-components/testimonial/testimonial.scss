@@ -1,0 +1,42 @@
+@import "bootstrap-icons/font/bootstrap-icons.css";
+
+i {
+  cursor: pointer;
+  color: black;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: #b4eaff;;
+  }
+}
+
+.testimonial-card {
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.testimonial-card.fade-out {
+  opacity: 0;
+}
+
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+
+  .dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+    cursor: pointer;
+
+    &.active {
+      background-color: #333;
+    }
+  }
+}
+
+
