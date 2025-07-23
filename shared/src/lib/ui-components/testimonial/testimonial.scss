@@ -1,5 +1,9 @@
 @import "bootstrap-icons/font/bootstrap-icons.css";
 
+.txt-blue{
+  color: #505C74;
+}
+
 i {
   cursor: pointer;
   color: black;
@@ -10,6 +14,10 @@ i {
   }
 }
 
+.arrow-btn{
+  all: unset;
+}
+
 .testimonial-card {
   opacity: 1;
   transition: all 0.3s ease-in-out;
@@ -17,6 +25,13 @@ i {
 
 .testimonial-card.fade-out {
   opacity: 0;
+}
+
+.testimonial-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 50%;
 }
 
 .dots {

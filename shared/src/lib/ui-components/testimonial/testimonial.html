@@ -1,18 +1,18 @@
 <div class="container mb-5">
-  <h1 class="text-center my-5">Echte Stimmen aus Projekten, die zeigen, wie ich arbeite:</h1>
+  <h1 class="text-center txt-blue my-5">Echte Stimmen aus Projekten, die zeigen, wie ich arbeite:</h1>
   <div class="testimonial-carousel position-relative text-center py-4">
     <div class="testimonial-card p-4 shadow rounded bg-light mx-auto"
          [class.fade-out]="isFading"
          style="max-width: 500px;">
       <img [src]="testimonials[currentIndex]?.imageUrl"
            [alt]="testimonials[currentIndex]?.name"
-           class="rounded-circle mb-3"
-           width="80" height="80"/>
+           class="rounded-circle testimonial-img mb-3"
+           />
       <p class="fst-italic">"{{ testimonials[currentIndex]?.text }}"</p>
-      <h5 class="mb-0">{{ testimonials[currentIndex]?.name }}</h5>
+      <h5 class="mb-0 txt-blue">{{ testimonials[currentIndex]?.name }}</h5>
       <small class="text-muted">{{ testimonials[currentIndex]?.role }}</small>
       <div *ngIf="testimonials[currentIndex]?.linkedinUrl" class="mt-2">
-        <a [href]="testimonials[currentIndex]?.linkedinUrl" target="_blank">LinkedIn</a>
+        <a [href]="testimonials[currentIndex]?.linkedinUrl" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
       </div>
     </div>
     <div class="dots mt-3">
@@ -21,14 +21,14 @@
         [class.active]="i === currentIndex"
         (click)="goToIndex(i)"></span>
     </div>
-    <div class="position-absolute start-0 top-50 translate-middle-y"
+    <button class="arrow-btn position-absolute start-0 top-50 translate-middle-y"
          (click)="changeIndex(false)" aria-label="Zurück">
       <i class="bi bi-arrow-left-circle-fill fs-2"></i>
-    </div>
+    </button>
 
-    <div class="position-absolute end-0 top-50 translate-middle-y"
+    <button class="arrow-btn position-absolute end-0 top-50 translate-middle-y"
          (click)="changeIndex(true)" aria-label="Weiter">
       <i class="bi bi-arrow-right-circle-fill fs-2"></i>
-    </div>
+    </button>
   </div>
 </div>

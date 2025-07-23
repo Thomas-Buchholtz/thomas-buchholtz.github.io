@@ -1,15 +1,21 @@
-import { Route } from '@angular/router';
-import {Cv} from './pages/cv/cv';
+import {Route} from '@angular/router';
 import {Home} from "./pages/home/home";
-import {NotFound} from "./pages/notfound/404";
 
 export const appRoutes: Route[] = [
 
   {path: '', component: Home},
 
-  {path: 'cv', component: Cv},
+  {
+    path: 'cv',
+    loadComponent: () =>
+      import('./pages/cv/cv').then(m => m.Cv),
+  },
 
-  {path: '404', component: NotFound},
+  {
+    path: 'pageNotFound',
+    loadComponent: () =>
+      import('./pages/pageNotFound/pageNotFound').then(m => m.PageNotFound),
+  },
 
   {path: '**', redirectTo: ''}
 ];

@@ -1,6 +1,6 @@
 import {Component, inject} from '@angular/core';
 import {SupabaseContactService} from '../../service/supabase-contact.service';
-import {FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
+import {FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {Modal} from 'bootstrap';
