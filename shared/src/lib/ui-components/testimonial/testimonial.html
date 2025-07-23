@@ -4,30 +4,34 @@
     <div class="testimonial-card p-4 shadow rounded bg-light mx-auto"
          [class.fade-out]="isFading"
          style="max-width: 500px;">
-      <img [src]="testimonials[currentIndex]?.imageUrl"
-           [alt]="testimonials[currentIndex]?.name"
+      <img [src]="testimonials[currentIndex].imageUrl"
+           [alt]="testimonials[currentIndex].name"
            class="rounded-circle testimonial-img mb-3"
-           />
-      <p class="fst-italic">"{{ testimonials[currentIndex]?.text }}"</p>
-      <h5 class="mb-0 txt-blue">{{ testimonials[currentIndex]?.name }}</h5>
-      <small class="text-muted">{{ testimonials[currentIndex]?.role }}</small>
-      <div *ngIf="testimonials[currentIndex]?.linkedinUrl" class="mt-2">
-        <a [href]="testimonials[currentIndex]?.linkedinUrl" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
+      />
+      <p class="fst-italic">"{{ testimonials[currentIndex].text }}"</p>
+      <h5 class="mb-0 txt-blue">{{ testimonials[currentIndex].name }}</h5>
+      <small class="text-muted">{{ testimonials[currentIndex].role }}</small>
+      <div *ngIf="testimonials[currentIndex].linkedinUrl" class="mt-2">
+        <a [href]="testimonials[currentIndex].linkedinUrl" target="_blank"><i class="bi bi-linkedin fs-4"></i></a>
       </div>
     </div>
     <div class="dots mt-3">
-  <span *ngFor="let testimonial of testimonials; let i = index"
+      <button
+        *ngFor="let testimonial of testimonials; let i = index"
         class="dot"
         [class.active]="i === currentIndex"
-        (click)="goToIndex(i)"></span>
+        (click)="goToIndex(i)"
+        type="button"
+        [attr.aria-label]="'Testimonial ' + (i + 1)">
+      </button>
     </div>
     <button class="arrow-btn position-absolute start-0 top-50 translate-middle-y"
-         (click)="changeIndex(false)" aria-label="Zurück">
+            (click)="changeIndex(false)" aria-label="Zurück">
       <i class="bi bi-arrow-left-circle-fill fs-2"></i>
     </button>
 
     <button class="arrow-btn position-absolute end-0 top-50 translate-middle-y"
-         (click)="changeIndex(true)" aria-label="Weiter">
+            (click)="changeIndex(true)" aria-label="Weiter">
       <i class="bi bi-arrow-right-circle-fill fs-2"></i>
     </button>
   </div>

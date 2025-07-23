@@ -16,7 +16,7 @@ import {HttpClientModule} from "@angular/common/http";
   styleUrl: './home.scss',
 })
 export class Home implements AfterViewInit {
-@ViewChild('heading', { static: true }) heading!: ElementRef;
+  @ViewChild('heading', {static: true}) heading!: ElementRef;
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(
