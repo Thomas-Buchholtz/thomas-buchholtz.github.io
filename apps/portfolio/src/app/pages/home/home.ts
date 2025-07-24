@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ContactComponent, Heroshot} from "@lib/ui-components";
+import {ContactComponent, Heroshot, TestimonialComponent} from "@lib/ui-components";
 import {HttpClientModule} from "@angular/common/http";
 
 @Component({
@@ -9,7 +9,8 @@ import {HttpClientModule} from "@angular/common/http";
     CommonModule,
     Heroshot,
     ContactComponent,
-    HttpClientModule
+    HttpClientModule,
+    TestimonialComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
