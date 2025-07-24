@@ -12,7 +12,7 @@ export const appRoutes: Route[] = [
   },
 
   {
-    path: 'pageNotFound',
+    path: '404',
     loadComponent: () =>
       import('./pages/pageNotFound/pageNotFound').then(m => m.PageNotFound),
   },
