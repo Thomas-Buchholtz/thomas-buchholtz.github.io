@@ -1,9 +1,9 @@
-import {Component, inject} from '@angular/core';
-import {SupabaseContactService} from '../../service/supabase-contact.service';
-import {FormBuilder, Validators, ReactiveFormsModule} from '@angular/forms';
-import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms';
-import {Modal} from 'bootstrap';
+import { Component, inject } from '@angular/core';
+import { SupabaseContactService } from '../../service/supabase-contact.service';
+import { FormBuilder, Validators, ReactiveFormsModule, AbstractControl, ValidationErrors } from '@angular/forms';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { Modal } from 'bootstrap';
 
 @Component({
   selector: 'lib-contact',
@@ -18,7 +18,7 @@ export class ContactComponent {
 
   contactForm = this.fb.group({
     name: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
+    email: ['', [Validators.required, emailWithUmlautValidator]],
     message: ['', Validators.required],
   });
 
@@ -47,4 +47,15 @@ export class ContactComponent {
       modal.show();
     }
   }
+}
+
+function emailWithUmlautValidator(control: AbstractControl): ValidationErrors | null {
+  const value = control.value;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i;
+
+  if (!value || emailRegex.test(value)) {
+    return null;
+  }
+
+  return { email: true };
 }
