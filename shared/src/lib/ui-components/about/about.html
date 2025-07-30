@@ -1,0 +1,19 @@
+<div class="container mb-5">
+  <div class="character-grid">
+    <div class="character-card" *ngFor="let char of characters" (click)="openModal(char)">
+      <img [src]="char.imageUrl" [alt]="char.name" class="character-image"/>
+      <div class="character-name">{{ char.name }}</div>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div class="modal-overlay" *ngIf="selectedCharacter" (click)="closeModal()">
+    <div class="modal-dialog" (click)="$event.stopPropagation()">
+      <button class="close-button" (click)="closeModal()">&times;</button>
+      <img [src]="selectedCharacter.imageUrl" [alt]="selectedCharacter.name" class="modal-image"/>
+      <h2>{{ selectedCharacter.name }}</h2>
+      <h4>{{ selectedCharacter.role }}</h4>
+      <p>{{ selectedCharacter.description }}</p>
+    </div>
+  </div>
+</div>

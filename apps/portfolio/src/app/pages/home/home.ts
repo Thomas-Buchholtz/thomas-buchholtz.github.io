@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {ContactComponent, Heroshot, TestimonialComponent} from "@lib/ui-components";
+import {About, Character, ContactComponent, Heroshot, TestimonialComponent} from "@lib/ui-components";
 import {HttpClientModule} from "@angular/common/http";
 
 @Component({
@@ -10,7 +10,8 @@ import {HttpClientModule} from "@angular/common/http";
     Heroshot,
     ContactComponent,
     HttpClientModule,
-    TestimonialComponent
+    TestimonialComponent,
+    About
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
@@ -33,4 +34,35 @@ export class Home implements AfterViewInit {
 
     observer.observe(this.heading.nativeElement);
   }
+
+  characters: Character[] = [
+    {
+      id: 'uiux',
+      name: 'UI/UX Master',
+      imageUrl: 'assets/marie_vormwald.jpg',
+      role: 'UI/UX Designer',
+      description: 'Experte für Nutzerfreundlichkeit und Design.'
+    },
+    {
+      id: 'frontend',
+      name: 'Frontend Hero',
+      imageUrl: 'assets/sebastian_scholz.jpg',
+      role: 'Frontend Entwickler',
+      description: 'Leidenschaftlicher Angular- und CSS-Zauberer.'
+    },
+    {
+      id: 'consulting',
+      name: 'Consultant Pro',
+      imageUrl: 'assets/heroshot_code_2.jpg',
+      role: 'Consultant',
+      description: 'Berät strategisch und lösungsorientiert.'
+    },
+    {
+      id: 'bonus',
+      name: 'Bonus Charakter',
+      imageUrl: 'assets/mobile_hero_2.jpg',
+      role: 'Special Guest',
+      description: 'Überraschungsgast mit besonderen Skills.'
+    },
+  ];
 }
