@@ -1,6 +1,6 @@
 import {AfterViewInit, Component, ElementRef, ViewChild} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {About, Character, ContactComponent, Heroshot, TestimonialComponent} from "@lib/ui-components";
+import {About, Character, PieChartComponent, ContactComponent, Heroshot, TestimonialComponent} from "@lib/ui-components";
 import {HttpClientModule} from "@angular/common/http";
 
 @Component({
@@ -11,13 +11,18 @@ import {HttpClientModule} from "@angular/common/http";
     ContactComponent,
     HttpClientModule,
     TestimonialComponent,
-    About
+    About,
+    PieChartComponent,
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
 })
 export class Home implements AfterViewInit {
 @ViewChild('heading', { static: true }) heading!: ElementRef;
+
+  chartData = [55, 30, 10, 5];
+  chartLabels = ['UI/UX Designer', 'Frontend Entwickler', 'Berater', 'Bonus'];
+  colors =['#A3BCEA', '#505C74', '#619691', '#837BAC',];
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(

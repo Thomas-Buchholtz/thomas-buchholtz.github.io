@@ -7,9 +7,13 @@
 </section>
 
 <section class="my-5">
-  <h1 class="text-center mb-5">Aber wer bin ich denn genau?</h1>
-  <!--TODO: Apex Chart 40% UI/UX 30% Frontend Dev 30% Berater-->
-  <h1 class="text-center mb-5">Primär bin ich beruflich, als auch privat ein begeisterter Problemlöser</h1>
+  <h1 class="text-center mb-5">Genau genommen zu:</h1>
+  <app-pie-chart
+    [series]="chartData"
+    [labels]="chartLabels"
+    [colors]="colors"
+    dataLabelFontSize="18px"
+  ></app-pie-chart>  <h1 class="text-center mb-5">Aber primär bin ich ein begeisterter Problemlöser</h1>
   <h3 class="text-center mb-5">Wähle deinen Character:</h3>
 
   <lib-about [characters]="characters"></lib-about>
