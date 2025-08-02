@@ -22,7 +22,7 @@ export class Home implements AfterViewInit {
 
   chartData = [55, 30, 10, 5];
   chartLabels = ['UI/UX Designer', 'Frontend Entwickler', 'Berater', 'Bonus'];
-  colors =['#A3BCEA', '#505C74', '#619691', '#837BAC',];
+  colors =['#35538E', '#619691', '#BCB2AD', '#837BAC',];
 
   ngAfterViewInit() {
     const observer = new IntersectionObserver(

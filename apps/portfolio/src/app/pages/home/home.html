@@ -6,6 +6,22 @@
   </h1>
 </section>
 
+<section>
+  <h1 class="text-center my-5">Mit meinen 3 wichtigsten Bausteinen:</h1>
+  <div class="d-flex justify-content-center">
+    <img
+      src="assets/main_skills.svg"
+      class="d-none d-md-block"
+      alt="Meine 3 Hauptbausteine"
+    />
+    <img
+      src="assets/main_skills_mobile.svg"
+      class="d-block d-md-none"
+      alt="Meine 3 Hauptbausteine"
+    />
+  </div>
+</section>
+
 <section class="my-5">
   <h1 class="text-center mb-5">Genau genommen zu:</h1>
   <app-pie-chart
@@ -13,9 +29,14 @@
     [labels]="chartLabels"
     [colors]="colors"
     dataLabelFontSize="18px"
-  ></app-pie-chart>  <h1 class="text-center mb-5">Aber primär bin ich ein begeisterter Problemlöser</h1>
+  ></app-pie-chart>
+</section>
+<div class="d-flex justify-content-center">
+  <hr class="w-75">
+</div>
+<section>
+  <h1 class="text-center my-5">Aber primär ein begeisterter Problemlöser</h1>
   <h3 class="text-center mb-5">Wähle deinen Character:</h3>
-
   <lib-about [characters]="characters"></lib-about>
 </section>
 
