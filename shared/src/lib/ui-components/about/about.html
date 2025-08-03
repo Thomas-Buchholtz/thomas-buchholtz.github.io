@@ -34,6 +34,7 @@
       (click)="$event.stopPropagation()"
       (keydown.enter)="$event.stopPropagation()"
     >
+      <h2 class="txt-blue">{{ selectedCharacter.name }}</h2>
       <button
         type="button"
         class="close-button"
@@ -46,9 +47,10 @@
         [alt]="selectedCharacter.name"
         class="modal-image"
       />
-      <h2>{{ selectedCharacter.name }}</h2>
-      <h4>{{ selectedCharacter.role }}</h4>
-      <p>{{ selectedCharacter.description }}</p>
+      <h4 class="txt-skills">{{ selectedCharacter.skills }}</h4>
+      <p>{{ selectedCharacter.skillDescription }}</p>
+      <h4 class="txt-weaknesses">{{ selectedCharacter.weaknesses }}</h4>
+      <p>{{ selectedCharacter.weakenDescription }}</p>
     </div>
   </div>
 </div>

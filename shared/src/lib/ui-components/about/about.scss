@@ -1,3 +1,15 @@
+.txt-skills{
+  color: #619691;
+}
+
+.txt-weaknesses{
+  color: #bd6666;
+}
+
+.txt-blue{
+  color: #505C74;
+}
+
 .character-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
@@ -17,6 +29,12 @@
 .character-image {
   width: 100%;
   border-radius: 8px;
+  filter: grayscale(90%);
+
+  &:hover {
+    filter: none;
+    border: 4px solid #b4eaff;
+  }
 }
 
 .character-name {
@@ -44,21 +62,24 @@
   max-width: 400px;
   width: 90%;
   position: relative;
-  text-align: center;
+  text-align: left;
 }
 
 .close-button {
   position: absolute;
-  top: 8px;
-  right: 12px;
-  background: none;
+  color: #b4eaff;
+  top: -35px;
+  right: -30px;
+  background: #505C74;
+  border-radius: 8px;
+  height: 10%;
+  width: 15%;
   border: none;
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   cursor: pointer;
 }
 
 .modal-image {
-  width: 100px;
-  border-radius: 50%;
+  width: 100%;
   margin-bottom: 1rem;
 }

@@ -5,8 +5,10 @@ export interface Character {
   id: string;
   name: string;
   imageUrl: string;
-  role: string;
-  description: string;
+  skills: string;
+  skillDescription: string;
+  weaknesses: string;
+  weakenDescription: string;
 }
 
 @Component({
@@ -16,6 +18,7 @@ export interface Character {
   templateUrl: './about.html',
   styleUrls: ['./about.scss'],
 })
+
 export class About {
   @Input() characters: Character[] = [];
   selectedCharacter: Character | null = null;
