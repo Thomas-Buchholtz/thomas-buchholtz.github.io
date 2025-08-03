@@ -1,5 +1,5 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import {PieChartComponent} from "@lib/ui-components";
+import {PieChartComponent} from "./pie-chart.component";
 
 describe('PieChart', () => {
   let component: PieChartComponent;

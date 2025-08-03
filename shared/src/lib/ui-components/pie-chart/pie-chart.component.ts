@@ -21,7 +21,7 @@ export interface PieChartOptions {
 }
 
 @Component({
-  selector: 'app-pie-chart',
+  selector: 'lib-pie-chart',
   standalone: true,
   imports: [ChartComponent],
   templateUrl: './pie-chart.component.html',
@@ -53,9 +53,7 @@ export class PieChartComponent implements OnInit {
         dropShadow: {
           enabled: false
         },
-        formatter: (val, opts) => {
-          return Math.round(val as number) + '%';
-        }
+        formatter: (val) => Math.round(val as number) + '%',
       },
       responsive: [
         {
