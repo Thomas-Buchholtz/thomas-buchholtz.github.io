@@ -44,28 +44,28 @@ export class Home implements AfterViewInit {
     {
       id: 'uiux',
       name: 'UI/UX Master',
-      imageUrl: 'assets/marie_vormwald.jpg',
+      imageUrl: 'assets/ui-ux-me.jpg',
       role: 'UI/UX Designer',
       description: 'Experte für Nutzerfreundlichkeit und Design.'
     },
     {
       id: 'frontend',
       name: 'Frontend Hero',
-      imageUrl: 'assets/sebastian_scholz.jpg',
+      imageUrl: 'assets/frontend-me.jpg',
       role: 'Frontend Entwickler',
       description: 'Leidenschaftlicher Angular- und CSS-Zauberer.'
     },
     {
       id: 'consulting',
       name: 'Consultant Pro',
-      imageUrl: 'assets/heroshot_code_2.jpg',
+      imageUrl: 'assets/consultant-me.jpg',
       role: 'Consultant',
       description: 'Berät strategisch und lösungsorientiert.'
     },
     {
       id: 'bonus',
       name: 'Bonus Charakter',
-      imageUrl: 'assets/mobile_hero_2.jpg',
+      imageUrl: 'assets/bonus-me.jpg',
       role: 'Special Guest',
       description: 'Überraschungsgast mit besonderen Skills.'
     },

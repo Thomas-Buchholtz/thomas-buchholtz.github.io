@@ -2,15 +2,10 @@ import {Component, Input} from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 export interface Character {
-  /** Eindeutige Kennung, z.B. 'uiux', 'frontend' */
   id: string;
-  /** Anzeigename */
   name: string;
-  /** Pfad oder URL zum Bild */
   imageUrl: string;
-  /** Kurztitel oder Rolle */
   role: string;
-  /** Kurzprofil-Text */
   description: string;
 }
 
