@@ -33,7 +33,7 @@
   backdrop-filter: blur(5px);
 }
 
-a{
+a {
   text-decoration: none;
 }
 
@@ -57,4 +57,14 @@ a{
 
 .nav-link:hover {
   background-size: 0 3px, 100% 3px;
+}
+
+.cv {
+  border: none;
+
+  &:hover {
+    background-color: #b4eaff;;
+    color: #505C74;
+    border: none;
+  }
 }

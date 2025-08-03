@@ -4,6 +4,15 @@
   color: #505C74;
 }
 
+.btn{
+  border: none;
+  &:hover {
+    background-color: #b4eaff;;
+    color: #505C74;
+    border: none;
+  }
+}
+
 .first-section-img {
   position: relative;
 

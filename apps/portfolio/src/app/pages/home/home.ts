@@ -9,6 +9,7 @@ import {
   TestimonialComponent
 } from "@lib/ui-components";
 import {HttpClientModule} from "@angular/common/http";
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home',
@@ -20,6 +21,7 @@ import {HttpClientModule} from "@angular/common/http";
     TestimonialComponent,
     About,
     PieChartComponent,
+    RouterLink
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
