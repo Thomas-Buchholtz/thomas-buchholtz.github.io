@@ -1,0 +1,56 @@
+<div class="container mb-5">
+  <div class="character-grid">
+    <div
+      class="character-card"
+      *ngFor="let char of characters"
+      role="button"
+      tabindex="0"
+      (click)="openModal(char)"
+      (keydown.enter)="openModal(char)"
+    >
+      <img
+        [src]="char.imageUrl"
+        [alt]="char.name"
+        class="character-image"
+      />
+      <div class="character-name">{{ char.name }}</div>
+    </div>
+  </div>
+
+  <!-- Modal Overlay -->
+  <div
+    class="modal-overlay"
+    *ngIf="selectedCharacter"
+    role="button"
+    aria-label="Schließe Modal"
+    tabindex="0"
+    (click)="closeModal()"
+    (keydown.enter)="closeModal()"
+  >
+    <div
+      class="modal-dialog"
+      role="document"
+      tabindex="0"
+      (click)="$event.stopPropagation()"
+      (keydown.enter)="$event.stopPropagation()"
+    >
+      <h2 class="txt-blue">{{ selectedCharacter.name }}</h2>
+      <button
+        type="button"
+        class="close-button"
+        aria-label="Schließe Modal"
+        (click)="closeModal()"
+        (keydown.enter)="closeModal()"
+      >&times;</button>
+      <img
+        [src]="selectedCharacter.imageUrl"
+        [alt]="selectedCharacter.name"
+        class="modal-image"
+      />
+      <h4 class="txt-skills">{{ selectedCharacter.skills }}</h4>
+      <p>{{ selectedCharacter.skillDescription }}</p>
+      <h4 class="txt-weaknesses">{{ selectedCharacter.weaknesses }}</h4>
+      <p>{{ selectedCharacter.weakenDescription }}</p>
+    </div>
+  </div>
+</div>

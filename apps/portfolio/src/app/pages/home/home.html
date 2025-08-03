@@ -6,6 +6,53 @@
   </h1>
 </section>
 
+<section>
+  <h1 class="text-center my-5 txt-blue">Mit meinen 3 wichtigsten Bausteinen:</h1>
+  <div class="d-flex justify-content-center">
+    <img
+      src="assets/main_skills.svg"
+      class="d-none d-md-block"
+      alt="Meine 3 Hauptbausteine"
+    />
+    <img
+      src="assets/main_skills_mobile.svg"
+      class="d-block d-md-none"
+      alt="Meine 3 Hauptbausteine"
+    />
+  </div>
+</section>
+
+<section class="my-5">
+  <h1 class="text-center mb-5 txt-blue">Genau genommen zu:</h1>
+  <lib-pie-chart
+    [series]="chartData"
+    [labels]="chartLabels"
+    [colors]="colors"
+    dataLabelFontSize="18px"
+  ></lib-pie-chart>
+</section>
+<div class="d-flex justify-content-center">
+  <hr class="w-75">
+</div>
+<section>
+  <h1 class="text-center my-5 txt-blue">Aber primär bin ich ein begeisterter Problemlöser</h1>
+  <h3 class="text-center mb-5">Wähle deinen Character:</h3>
+  <lib-about [characters]="characters"></lib-about>
+</section>
+
+<section class="second-section d-flex flex-column justify-content-center align-items-center text-center">
+  <h1 class="m-0 txt-blue">Neugierig?</h1>
+  <a class="btn-primary btn btn-dark my-5 px-4 py-2" routerLink="/cv">
+    Zum Lebenslauf
+  </a>
+  <p class="mb-3">Mehr Updates kommen bald!</p>
+  <strong class="mb-3 txt-blue">Schau daher gerne öfters vorbei!</strong>
+  <p>Du kannst mich unten aber bereits kontaktieren.
+    Ich antworte so bald wie möglich!</p>
+  <i class="bi bi-arrow-down-circle-fill fs-1 display-1 mt-5"></i>
+</section>
+<lib-contact></lib-contact>
+
 <lib-testimonial [testimonials]="[
   {
     name: 'Ralf Dänzer',
@@ -30,12 +77,8 @@
   },
 ]"></lib-testimonial>
 
-<section class="second-section d-flex flex-column justify-content-center align-items-center text-center">
-  <h1 class="m-0 txt-blue">Neugierig?</h1>
-  <p class="my-3">Mehr Updates kommen bald!</p>
-  <strong class="mb-3 txt-blue">Schau daher gerne öfters vorbei!</strong>
-  <p>Du kannst mich unten aber bereits kontaktieren.
-    Ich antworte so bald wie möglich!</p>
-  <i class="bi bi-arrow-down-circle-fill fs-1 display-1"></i>
-</section>
-<lib-contact></lib-contact>
+<div class="d-flex justify-content-center align-items-center text-center">
+  <a class="btn-primary btn btn-dark mb-5 px-4 py-2" routerLink="/cv">
+    Zum Lebenslauf
+  </a>
+</div>

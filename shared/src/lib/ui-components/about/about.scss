@@ -1,0 +1,84 @@
+.txt-skills{
+  color: #619691;
+}
+
+.txt-weaknesses{
+  color: #bd6666;
+}
+
+.txt-blue{
+  color: #505C74;
+}
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1rem;
+}
+
+.character-card {
+  cursor: pointer;
+  text-align: center;
+  transition: transform 0.2s;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.character-image {
+  width: 100%;
+  border-radius: 8px;
+  filter: grayscale(90%);
+
+  &:hover {
+    filter: none;
+    border: 4px solid #b4eaff;
+  }
+}
+
+.character-name {
+  margin-top: 0.5rem;
+  font-weight: bold;
+}
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-dialog {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  max-width: 400px;
+  width: 90%;
+  position: relative;
+  text-align: left;
+}
+
+.close-button {
+  position: absolute;
+  color: #b4eaff;
+  top: -35px;
+  right: -30px;
+  background: #505C74;
+  border-radius: 8px;
+  width: 15%;
+  border: none;
+  font-size: 2.5rem;
+  cursor: pointer;
+}
+
+.modal-image {
+  width: 100%;
+  margin-bottom: 1rem;
+}

@@ -4,6 +4,15 @@
   color: #505C74;
 }
 
+.btn{
+  border: none;
+  &:hover {
+    background-color: #b4eaff;;
+    color: #505C74;
+    border: none;
+  }
+}
+
 .first-section-img {
   position: relative;
 
@@ -42,4 +51,9 @@
   height: 50vh;
   background-color: #f8f9fa;
   position: relative;
+}
+
+hr{
+  border: 2px solid #644f3d;
+  border-radius: 50px;
 }
