@@ -1,5 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { Home } from './home';
+import {RouterTestingModule} from "@angular/router/testing";
 
 class MockIntersectionObserver {
   constructor(public callback: any, public options?: any) {}
@@ -21,7 +22,7 @@ describe('Home', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [Home],
+      imports: [Home, RouterTestingModule],
     }).compileComponents();
 
     fixture = TestBed.createComponent(Home);
