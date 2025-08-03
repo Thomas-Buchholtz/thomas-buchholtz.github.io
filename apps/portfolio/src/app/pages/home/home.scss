@@ -51,6 +51,9 @@
   height: 50vh;
   background-color: #f8f9fa;
   position: relative;
+  @media (max-width: 768px) {
+    height: 70vh;
+  }
 }
 
 hr{
