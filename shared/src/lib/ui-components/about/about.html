@@ -19,13 +19,14 @@
 
   <!-- Modal Overlay -->
   <div
-    class="modal-overlay"
-    *ngIf="selectedCharacter"
-    role="button"
-    aria-label="Schließe Modal"
-    tabindex="0"
-    (click)="closeModal()"
-    (keydown.enter)="closeModal()"
+  class="modal-overlay"
+  *ngIf="selectedCharacter"
+  [class.modal-closing]="isClosing"
+  role="button"
+  aria-label="Schließe Modal"
+  tabindex="0"
+  (click)="closeModal()"
+  (keydown.enter)="closeModal()"
   >
     <div
       class="modal-dialog"

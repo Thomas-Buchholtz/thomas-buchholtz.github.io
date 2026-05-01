@@ -21,13 +21,20 @@ export interface Character {
 
 export class About {
   @Input() characters: Character[] = [];
-  selectedCharacter: Character | null = null;
+  selectedCharacter: any = null;
+  isClosing = false;
 
-  openModal(character: Character): void {
+  openModal(character: any): void {
     this.selectedCharacter = character;
+    this.isClosing = false;
   }
 
   closeModal(): void {
-    this.selectedCharacter = null;
+    this.isClosing = true;
+
+    setTimeout(() => {
+      this.selectedCharacter = null;
+      this.isClosing = false;
+    }, 200);
   }
 }
