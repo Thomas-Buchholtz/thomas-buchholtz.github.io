@@ -34,14 +34,15 @@
       (click)="$event.stopPropagation()"
       (keydown.enter)="$event.stopPropagation()"
     >
-      <h2 class="txt-blue">{{ selectedCharacter.name }}</h2>
-      <button
+    <button
         type="button"
         class="close-button"
         aria-label="Schließe Modal"
         (click)="closeModal()"
         (keydown.enter)="closeModal()"
       >&times;</button>
+      <h2 class="txt-blue">{{ selectedCharacter.name }}</h2>
+
       <img
         [src]="selectedCharacter.imageUrl"
         [alt]="selectedCharacter.name"
