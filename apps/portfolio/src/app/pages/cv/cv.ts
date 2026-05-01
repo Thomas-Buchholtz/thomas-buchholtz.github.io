@@ -1,9 +1,10 @@
 import {Component, ElementRef, ViewChild} from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { Chatbot } from "@lib/ui-components";
 
 @Component({
   selector: 'app-cv',
-  imports: [CommonModule],
+  imports: [CommonModule, Chatbot],
   templateUrl: './cv.html',
   styleUrl: './cv.scss'
 })
