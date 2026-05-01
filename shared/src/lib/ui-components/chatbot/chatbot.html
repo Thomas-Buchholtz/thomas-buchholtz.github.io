@@ -1,0 +1,39 @@
+<button class="chat-toggle" type="button" (click)="toggleChat()">
+    {{ isOpen ? '×' : 'Chat' }}
+  </button>
+
+  <div class="chat-window" *ngIf="isOpen">
+    <div class="chat-header">
+      <strong>Portfolio Assistant</strong>
+      <button type="button" (click)="toggleChat()">×</button>
+    </div>
+
+    <div class="chat-messages" #chatMessages>
+        <div
+          *ngFor="let message of messages"
+          class="chat-message"
+          [class.user]="message.sender === 'user'"
+          [class.bot]="message.sender === 'bot'"
+        >
+          {{ message.text }}
+        </div>
+
+        <div class="chat-message bot typing" *ngIf="isTyping">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+    <form class="chat-input" (ngSubmit)="sendMessage()">
+      <input
+        type="text"
+        name="userInput"
+        [(ngModel)]="userInput"
+        placeholder="Frag mich etwas..."
+        autocomplete="off"
+      />
+
+      <button type="submit">Senden</button>
+    </form>
+  </div>

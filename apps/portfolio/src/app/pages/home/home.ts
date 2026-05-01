@@ -6,7 +6,8 @@ import {
   PieChartComponent,
   ContactComponent,
   Heroshot,
-  TestimonialComponent
+  TestimonialComponent,
+  Chatbot
 } from "@lib/ui-components";
 import {HttpClientModule} from "@angular/common/http";
 import {RouterLink} from "@angular/router";
@@ -21,7 +22,8 @@ import {RouterLink} from "@angular/router";
     TestimonialComponent,
     About,
     PieChartComponent,
-    RouterLink
+    RouterLink,
+    Chatbot
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss',
