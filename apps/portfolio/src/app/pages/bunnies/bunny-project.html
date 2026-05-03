@@ -1,0 +1,116 @@
+<section class="rabbit-page mt-5">
+    <div class="hero">
+      <span class="eyebrow">Social Media Case Study</span>
+
+      <h1>Rabbit Content Project</h1>
+
+      <p>
+        Ein persönliches Social-Media-Projekt rund um meine Kaninchen — mit Fokus
+        auf Video Editing, Storytelling, Community-Aufbau und Affiliate-Funnel.
+      </p>
+
+      <div class="hero-actions">
+        <a
+          *ngFor="let link of socialLinks"
+          class="social-button"
+          [href]="link.url"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="bi" [class]="link.icon"></i>
+          {{ link.label }}
+        </a>
+      </div>
+    </div>
+
+    <div class="content-grid">
+      <article class="intro-card">
+        <h2>Warum dieses Projekt?</h2>
+        <p>
+          Dieses Projekt ist für mich ein kreativer Playground für Content
+          Creation, visuelles Storytelling und Social-Media-Strategie.
+          Neben dem eigentlichen Content geht es auch darum, Zielgruppen besser zu
+          verstehen, Inhalte plattformgerecht aufzubereiten und Performance-Daten
+          sinnvoll zu nutzen.
+        </p>
+      </article>
+
+      <article class="intro-card accent">
+        <h2>Meine Rolle</h2>
+        <p>
+          Ich übernehme Konzeption, Videoschnitt, Textgestaltung, visuelle
+          Aufbereitung, Veröffentlichung und Analyse der Inhalte. Zusätzlich
+          pflege ich die Weiterleitung über Beacons.ai inklusive Affiliate-Links.
+        </p>
+      </article>
+    </div>
+
+    <div class="metrics-section">
+      <h2>Projekt-Fokus</h2>
+
+      <div class="metrics-grid">
+        <div class="metric-card" *ngFor="let metric of metrics">
+          <span>{{ metric.label }}</span>
+          <strong>{{ metric.value }}</strong>
+          <p>{{ metric.description }}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="tasks-section">
+      <h2>Was ich dabei mache</h2>
+
+      <div class="task-grid">
+        <div class="task-card" *ngFor="let task of tasks">
+          <i class="bi" [class]="task.icon"></i>
+          <h3>{{ task.title }}</h3>
+          <p>{{ task.text }}</p>
+        </div>
+      </div>
+    </div>
+
+      <section class="analytics-section">
+        <div class="section-heading">
+          <span class="eyebrow">Analytics & Learnings</span>
+          <h2>Datenbasiertes Content Learning</h2>
+          <p>
+            Die Performance wird über TikTok, Instagram, Beacons.ai und Amazon
+            Analytics beobachtet. Für das Portfolio werden bewusst nur ausgewählte
+            Learnings gezeigt, damit der Fokus auf Strategie, Gestaltung und Optimierung bleibt.
+          </p>
+        </div>
+
+        <div class="analytics-grid">
+          <div class="learning-card">
+            <h3>Key Learnings</h3>
+
+            <ul>
+              <li>
+                <strong>Untertitel erhöhen die Verständlichkeit</strong>
+                <span>Besonders bei Short-form Videos, die ohne Ton konsumiert werden.</span>
+              </li>
+
+              <li>
+                <strong>Der erste Moment entscheidet</strong>
+                <span>Ein schneller Einstieg hilft, Nutzer:innen im Video zu halten.</span>
+              </li>
+
+              <li>
+                <strong>Emotionale Inhalte performen stark</strong>
+                <span>Kaninchen-Content funktioniert besonders gut über Story, Nähe und Humor.</span>
+              </li>
+
+              <li>
+                <strong>Plattformen brauchen eigene Formate</strong>
+                <span>TikTok, Instagram und Beacons erfüllen unterschiedliche Rollen im Funnel.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="analytics-preview">
+            <img src="assets/social-media/beacons.png" alt="Beacons Analytics Screenshot" />
+            <img src="assets/social-media/amazon.png" alt="Amazon Analytics Screenshot" />
+          </div>
+        </div>
+      </section>
+  <lib-chatbot></lib-chatbot>
