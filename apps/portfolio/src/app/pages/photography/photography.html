@@ -1,0 +1,58 @@
+<section class="photography-page mt-5">
+    <div class="photography-hero">
+      <span class="eyebrow">Fotografien</span>
+      <h1>Moments, Details & Stories</h1>
+      <p>
+        Eine kleine Auswahl meiner Fotografie — mit Fokus auf Stimmung,
+        Komposition und visuellem Storytelling.
+      </p>
+    </div>
+
+    <div class="photo-grid">
+      <button
+        class="photo-card"
+        type="button"
+        *ngFor="let photo of photos; let i = index"
+        (click)="openModal(photo, i)"
+      >
+        <img [src]="photo.imageUrl" [alt]="photo.title" />
+
+        <div class="photo-overlay">
+          <span>{{ photo.category }}</span>
+          <h3>{{ photo.title }}</h3>
+        </div>
+      </button>
+    </div>
+
+    <div
+      class="modal-overlay"
+      role="button"
+      tabindex="0"
+      *ngIf="selectedPhoto"
+      [class.modal-closing]="isClosing"
+      (click)="closeModal()"
+    >
+      <div class="modal-content" role="button" tabindex="0" (click)="$event.stopPropagation()">
+        <button class="close-button" type="button" (click)="closeModal()">
+          ×
+        </button>
+
+        <button class="nav-button prev" type="button" (click)="previousPhoto($event)">
+          ‹
+        </button>
+
+        <img [src]="selectedPhoto.imageUrl" [alt]="selectedPhoto.title" />
+
+        <button class="nav-button next" type="button" (click)="nextPhoto($event)">
+          ›
+        </button>
+
+        <div class="modal-info">
+          <span>{{ selectedPhoto.category }}</span>
+          <h2>{{ selectedPhoto.title }}</h2>
+          <p>{{ selectedPhoto.description }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <lib-chatbot></lib-chatbot>
