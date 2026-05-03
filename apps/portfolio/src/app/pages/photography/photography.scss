@@ -180,7 +180,23 @@
     justify-content: center;
   }
 
+  i {
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #b4eaff;;
+    }
+
+    &.bi-linkedin{
+      color: #0A66C2;
+    }
+  }
+
   .nav-button {
+    all: unset;
+
     position: absolute;
     top: 50%;
     z-index: 2;
@@ -192,9 +208,6 @@
 
     border: none;
     border-radius: 50%;
-
-    background: rgba(80, 92, 116, 0.9);
-    color: white;
 
     font-size: 2rem;
     cursor: pointer;
