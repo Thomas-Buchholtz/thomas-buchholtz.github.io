@@ -80,7 +80,7 @@ export class Chatbot {
       return 'Servus grüß dich! Frag mich zum Beispiel nach Thomas’ Skills, Projekten, Tools oder Kontaktmöglichkeiten.';
     }
 
-    if (this.includesAny(q, ['wer bist du', 'über dich', 'about', 'erzähl', 'was von dir'])) {
+    if (this.includesAny(q, ['wer bist du', 'über dich', 'about', 'erzähl', 'erzählen', 'was von dir'])) {
       return 'Thomas ist ein erfahrener Frontend Developer und UI/UX Designer mit über 7 Jahren Erfahrung. Sein Fokus liegt auf modernen Webtechnologien und der Entwicklung von nutzerfreundlichen Interfaces.';
     }
 
@@ -92,12 +92,16 @@ export class Chatbot {
       return 'Thomas arbeitet besonders gerne mit Angular, NX, TypeScript, SCSS, Bootstrap, Tailwind, JavaScript, Cypress und Supabase. Sein Fokus liegt dabei auf sauberen und intuitiven UIs, guter Struktur und verständlichem Code. Zusätzlich beherrscht er natürlich auch verschiedene Design-Tools wie Figma, die Adobe Cloud etc.';
     }
 
+    if (this.includesAny(q, ['ki', 'ai', 'chatgpt', 'chat gpt', 'claude', 'gemini'])) {
+      return 'Thomas sieht KI nicht als bedrohung, sondern als neues Tool, welches die heutige Arbeitswelt beschleunigen wird. Daher schaut er sich immer wieder neue Tools an, um stets up to date zu bleiben.';
+    }
+
     if (this.includesAny(q, ['tech', 'technologien', 'entwicklung', 'frontend', 'stack'])) {
       return 'Thomas arbeitet mit Angular, React, Next.js und Nx. Zusätzlich nutzt er Tools wie Bootstrap, Tailwind, RxJS und Cypress für Testing.';
     }
 
-    if (this.includesAny(q, ['hobby', 'interessen', 'privat'])) {
-      return 'Neben der Arbeit interessiert sich Thomas für Technologie-Trends, Design und persönliche Weiterentwicklung. In seiner Freizeit macht er Sport, fotografiert und beschäftigt sich mit Themen wie Aktien und Krypto. Zusätzlich hat er zwei frei lebende Kaninchen, die Nugget und Cloud heißen und betreibt mit ihnen einen Social Media Kanal.';
+    if (this.includesAny(q, ['hobby', 'hobbies', 'kaninchen', 'trends', 'persönlich', 'weiterentwicklung', 'interessen', 'privat'])) {
+      return 'Neben der Arbeit interessiert sich Thomas für Technologie-Trends, Design und persönliche Weiterentwicklung. In seiner Freizeit macht er Sport, fotografiert und beschäftigt sich mit Themen wie Aktien und Krypto. Zusätzlich hat er zwei frei lebende Kaninchen, die Nugget und Cloud heißen und betreibt mit ihnen Social Media Kanäle.';
     }
 
     if (this.includesAny(q, ['projekt', 'projekte', 'portfolio'])) {
@@ -108,7 +112,7 @@ export class Chatbot {
       return 'Thomas ist sehr zuverlässig, arbeitet strukturiert und lösungsorientiert und bleibt auch in stressigen Situationen ruhig. Gleichzeitig legt er großen Wert auf Teamarbeit und gute Kommunikation.';
     }
 
-    if (this.includesAny(q, ['ux', 'ui', 'design'])) {
+    if (this.includesAny(q, ['ux', 'ui', 'design', 'design thinking'])) {
       return 'Thomas verbindet Entwicklung und Design. Er konzipiert Anwendungen, erstellt Prototypen und setzt diese technisch um – mit dem Ziel, dass sich Software nicht nur gut funktioniert, sondern sich auch gut anfühlt.';
     }
 

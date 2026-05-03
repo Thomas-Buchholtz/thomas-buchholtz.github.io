@@ -1,0 +1,289 @@
+.photography-page {
+    padding: 6rem 1rem 4rem;
+    min-height: 100vh;
+  }
+
+  .photography-hero {
+    max-width: 760px;
+    margin: 0 auto 3rem;
+    text-align: center;
+
+    .eyebrow {
+      color: #619691;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 0.75rem;
+      color: #505c74;
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      font-weight: 800;
+    }
+
+    p {
+      color: #6f7688;
+      font-size: 1.1rem;
+      line-height: 1.7;
+    }
+  }
+
+  .photo-grid {
+    max-width: 1100px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .photo-card {
+    position: relative;
+    border: none;
+    padding: 0;
+    height: 320px;
+    overflow: hidden;
+    border-radius: 16px;
+    cursor: pointer;
+    background: transparent;
+
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 450ms ease, filter 450ms ease;
+    }
+
+    &:hover img {
+      transform: scale(1.08);
+      filter: brightness(0.75);
+    }
+
+    &:hover .photo-overlay {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .photo-overlay {
+    position: absolute;
+    inset: 0;
+    padding: 1.5rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+
+    background: linear-gradient(
+      to top,
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.05)
+    );
+
+    color: white;
+    opacity: 0;
+    transform: translateY(12px);
+    transition: opacity 250ms ease, transform 250ms ease;
+
+    span {
+      color: #b4eaff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+    }
+
+    h3 {
+      margin: 0.35rem 0 0;
+      font-size: 1.4rem;
+    }
+  }
+
+  .modal-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    background: rgba(0, 0, 0, 0.78);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 2rem;
+    animation: fadeIn 220ms ease-out;
+  }
+
+  .modal-content {
+    position: relative;
+    max-width: 960px;
+    width: 100%;
+
+    background: white;
+    border-radius: 24px;
+    overflow: hidden;
+
+    animation: zoomIn 220ms ease-out;
+
+    img {
+      width: 100%;
+      max-height: 70vh;
+      object-fit: cover;
+      display: block;
+    }
+  }
+
+  .modal-info {
+    padding: 1.25rem 1.5rem;
+
+    span {
+      color: #619691;
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 0.8rem;
+    }
+
+    h2 {
+      margin: 0.35rem 0;
+      color: #505c74;
+    }
+
+    p {
+      margin: 0;
+      color: #6f7688;
+    }
+  }
+
+  .close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #505c74;
+    color: #b4eaff;
+
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  i {
+    cursor: pointer;
+    color: white;
+    transition: all 0.3s ease;
+
+    &:hover {
+      color: #b4eaff;;
+    }
+
+    &.bi-linkedin{
+      color: #0A66C2;
+    }
+  }
+
+  .nav-button {
+    all: unset;
+
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+
+    transform: translateY(-50%);
+
+    width: 44px;
+    height: 44px;
+
+    border: none;
+    border-radius: 50%;
+
+    font-size: 2rem;
+    cursor: pointer;
+
+    &.prev {
+      left: 1rem;
+    }
+
+    &.next {
+      right: 1rem;
+    }
+  }
+
+  .modal-closing {
+    animation: fadeOut 220ms ease-in forwards;
+
+    .modal-content {
+      animation: zoomOut 220ms ease-in forwards;
+    }
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+    }
+  }
+
+  @keyframes zoomIn {
+    from {
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+  }
+
+  @keyframes zoomOut {
+    from {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(16px) scale(0.96);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .modal-overlay {
+      padding: 1rem;
+    }
+
+    .modal-content img {
+      max-height: 60vh;
+    }
+
+    .nav-button {
+      width: 38px;
+      height: 38px;
+    }
+  }
