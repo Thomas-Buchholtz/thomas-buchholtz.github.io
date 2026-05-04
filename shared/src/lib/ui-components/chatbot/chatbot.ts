@@ -81,7 +81,11 @@ export class Chatbot {
     }
 
     if (this.includesAny(q, ['wer bist du', 'über dich', 'about', 'erzähl', 'erzählen', 'was von dir'])) {
-      return 'Thomas ist ein erfahrener Frontend Developer und UI/UX Designer mit über 7 Jahren Erfahrung. Sein Fokus liegt auf modernen Webtechnologien und der Entwicklung von nutzerfreundlichen Interfaces.';
+      return 'Thomas ist ein erfahrener UI/UX Designer und Frontend Entwickler mit über 7 Jahren Erfahrung. Sein Fokus liegt auf modernen Webtechnologien und der Entwicklung von nutzerfreundlichen Interfaces. Dabei hat er immer den Enduser im Blick, damit das entwickelte Produkt auch intuitiv nutzbar ist.';
+    }
+
+    if (this.includesAny(q, ['ausbildung', 'studium', 'uni', 'hochschule', 'abschluss', 'bachelor', 'master', 'abitur', 'schule'])) {
+      return 'Thomas hat neben seinem abgeschlossenem Studium, der Medieninformatik (B.Sc.), auch eine Ausbildung als Einzelhandelskaufmann abgeschlossen.';
     }
 
     if (this.includesAny(q, ['erfahrung', 'beruf', 'background'])) {
@@ -89,7 +93,7 @@ export class Chatbot {
     }
 
     if (this.includesAny(q, ['skill', 'skills', 'tool', 'tools', 'werkzeug', 'technologie'])) {
-      return 'Thomas arbeitet besonders gerne mit Angular, NX, TypeScript, SCSS, Bootstrap, Tailwind, JavaScript, Cypress und Supabase. Sein Fokus liegt dabei auf sauberen und intuitiven UIs, guter Struktur und verständlichem Code. Zusätzlich beherrscht er natürlich auch verschiedene Design-Tools wie Figma, die Adobe Cloud etc.';
+      return 'Thomas arbeitet besonders gerne mit Angular, NX, TypeScript, SCSS, Bootstrap, Tailwind, JavaScript, Cypress und Supabase. Sein Fokus liegt dabei auf sauberen und intuitiven UIs, guter Struktur und verständlichem Code. Zusätzlich beherrscht er natürlich auch verschiedene Design -und Konzeptions-Tools wie Figma und die Adobe Cloud etc.';
     }
 
     if (this.includesAny(q, ['ki', 'ai', 'chatgpt', 'chat gpt', 'claude', 'gemini'])) {
@@ -118,6 +122,10 @@ export class Chatbot {
 
     if (this.includesAny(q, ['kontakt', 'email', 'erreichen'])) {
       return 'Du kannst Thomas am besten über das Kontaktformular erreichen. Alternativ findest du ihn auch über seine verlinkten Profile wie LinkedIn oder XING.';
+    }
+
+    if (this.includesAny(q, ['figma', 'adobe', 'design tool', 'design tools', 'creative cloud', 'canva', 'affinity'])) {
+      return 'Am liebsten nutzt Thomas die Creative Cloud von Adobe. Typische UI/UX Konzeptions-Tools wie Figma beherrscht er natürlich auch.';
     }
 
     if (this.includesAny(q, ['angular'])) {
